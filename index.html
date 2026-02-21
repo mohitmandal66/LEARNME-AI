@@ -3,7 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>LearnMe AI | SyntaxSlayer</title>
+    <title>LearnMe AI | SyntaxSlayer</title><footer>
+    <div class="warning-text">
+        ⚠️ LearnMe AI uses multiple AI models and automated systems. Responses may sometimes contain inaccuracies. Please verify important information independently.
+    </div>
+</footer><style>
+footer {
+    background: black;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.warning-text {
+    color: rgb(244, 64, 64);
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+    animation: scrollText 10s linear infinite;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+</style>
     <style>
         :root {
             --accent: #009dff;
@@ -219,6 +247,19 @@
 </head>
 <body data-theme="dark">
 
+
+
+
+
+
+
+
+
+
+
+
+    
+
 <script>
     const savedTheme = localStorage.getItem('learnme_theme') || 'dark';
     document.body.setAttribute('data-theme', savedTheme);
@@ -270,7 +311,7 @@
         
         <div id="chat">
             <div class="front-logo-container">
-                <img id="front-page-logo" class="front-logo" src="b.png" alt="LearnMe AI Logo">
+                <img id="front-page-logo" class="front-logo" src="a.png" alt="LearnMe AI Logo">
             </div>
             <div class="box ai">
                 Welcome to <b>LearnMe AI</b>. I am a specialized research assistant developed by <b>Mohit Mandal</b> under <b>SyntaxSlayer</b>. <br><br>
