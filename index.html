@@ -388,6 +388,9 @@ footer {
 
 <footer>&copy; 2026 <b>SyntaxSlayer</b>. Developed by <b>Mohit Mandal</b>.</footer>
 <script>
+// API Key Configuration
+const SYNTAX_SLAYER_API_KEY = "sk-0a2740c462fd45f38a7d1dd44fc0f478";
+
 let mode = 'fast';
 let currentChatId = Date.now().toString();
 const WORKER_URL = "https://learnme-backend.justoneshot330.workers.dev/";
@@ -462,7 +465,6 @@ async function fetchUnsplashImage(query) {
                 </div>
             `;
         }
-
         return "";
     } catch {
         return "";
@@ -488,7 +490,6 @@ async function run() {
 
     chatHistory[currentChatId].messages.push({ role: 'user', content: text });
 
-    // ✅ REAL-TIME TIME & DATE HANDLER
     const now = new Date();
 
     if (/time|current time|what time/i.test(text)) {
@@ -511,11 +512,17 @@ async function run() {
     try {
         const res = await fetch(WORKER_URL, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                // Authorization header with your API key
+                'Authorization': `Bearer ${SYNTAX_SLAYER_API_KEY}`
+            },
             body: JSON.stringify({
                 prompt: text,
                 history: chatHistory[currentChatId].messages,
-                mode: activeMode
+                mode: activeMode,
+                // Including it in the body as well in case your worker prefers it there
+                key: SYNTAX_SLAYER_API_KEY
             })
         });
 
@@ -558,7 +565,6 @@ function appendBox(role, content) {
 
 function updateBox(box, content, query, usedMode) {
     let finalHTML = content;
-
     box.innerHTML = finalHTML;
     chatHistory[currentChatId].messages.push({ role: 'ai', content: finalHTML });
     localStorage.setItem('learnme_vFinal', JSON.stringify(chatHistory));
