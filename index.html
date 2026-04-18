@@ -7,11 +7,11 @@
     <meta name="google-site-verification" content="9oPhGG20kmOdb3rlprOc6030v3PlpHww9krfUiIKJC0"
     />
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="LearnMe AI by SyntaxSlayer. Your personal AI research assistant for learning, studying, and exploring knowledge. Developed by Mohit Mandal.">
-    <meta name="keywords" content="LearnMe AI, SyntaxSlayer, AI assistant, AI learning, Mohit Mandal, educational AI, AI research tool, study assistant, AI tutor, online learning, intelligent assistant, AI education, knowledge explorer, personalized learning, AI study companion, AI research assistant, learning platform, AI-powered learning, smart study tool, AI help, e-learning, AI learning app, digital tutor, AI knowledge tool, AI research platform, AI homework help, study AI, AI education assistant, AI learning system, personal AI tutor, AI study guide, AI research companion, AI educational tool, AI learning companion, AI knowledge assistant, AI classroom assistant, learning support AI, AI student assistant, AI knowledge explorer, AI learning resources, AI study helper, AI knowledge hub, AI academic assistant, AI learning solutions, AI for students, AI educational platform, AI skill booster, AI learning management, AI course assistant">
+    <meta name="description" content="LearnMe AI by LEO FORGE. Your personal AI research assistant for learning, studying, and exploring knowledge. Developed by Mohit Mandal sir.">
+    <meta name="keywords" content="LearnMe AI, SyntaxSlayer,LEO FORGE,CHATGPT, GEMINI, chatgpt, gemini, AI assistant, AI learning, Mohit Mandal, educational AI, AI research tool, study assistant, AI tutor, online learning, intelligent assistant, AI education, knowledge explorer, personalized learning, AI study companion, AI research assistant, learning platform, AI-powered learning, smart study tool, AI help, e-learning, AI learning app, digital tutor, AI knowledge tool, AI research platform, AI homework help, study AI, AI education assistant, AI learning system, personal AI tutor, AI study guide, AI research companion, AI educational tool, AI learning companion, AI knowledge assistant, AI classroom assistant, learning support AI, AI student assistant, AI knowledge explorer, AI learning resources, AI study helper, AI knowledge hub, AI academic assistant, AI learning solutions, AI for students, AI educational platform, AI skill booster, AI learning management, AI course assistant">
     <meta name="author" content="Mohit Mandal">
     <title>
-      LearnMe AI | SyntaxSlayer
+      LearnMe AI |LEO FORGE
     </title>
     <style>
       footer { background: black; padding: 10px 0; overflow: hidden; position:
@@ -294,7 +294,7 @@ footer {
         <div class="india-badge">MADE IN INDIA ~ एक भारत, श्रेष्ठ भारत</div>
 
         <div class="marquee-container">
-            <div class="marquee-content">DEVELOPED BY MOHIT MANDAL • PARENT COMPANY: SYNTAX SLAYER • 2026 EDITION</div>
+            <div class="marquee-content">DEVELOPED BY MOHIT MANDAL • PARENT COMPANY: LEO FORGE • 2026 EDITION</div>
         </div>
         
         <button onclick="newChat()" style="margin:15px 15px 5px 15px; padding:12px; border-radius:10px; border:none; background:var(--accent); color:#000; font-weight:bold; cursor:pointer; font-size: 14px;">+ New Session</button>
@@ -323,7 +323,7 @@ footer {
                 <img id="front-page-logo" class="front-logo" src="b.png" alt="LearnMe AI Logo">
             </div>
             <div class="box ai">
-                Welcome to <b>LearnMe AI</b>. I am a specialized research assistant developed by <b>Mohit Mandal</b> under <b>SyntaxSlayer</b>. <br><br>
+                Welcome to <b>LearnMe AI</b>. I am a specialized research assistant developed by <b>Mohit Mandal</b> under <b>LEO FORGE</b>. <br><br>
                 How can I help you learn today?
             </div>
         </div>
@@ -361,15 +361,15 @@ footer {
     </div>
     <div class="dev-popup-content">
         <b>Mohit Mandal</b><br>
-        Student • Aspiring Biomedical Scientist<br><br>
+        Student • Aspiring Biomedical ENGINEERING<br><br>
         Wants to implement AI in the medical field.<br>
-        Founder of <b>SyntaxSlayer</b> and creator of <b>LearnMe AI</b>.<br>
+        Founder of <b>LEO FORGE</b> and creator of <b>LearnMe AI</b>.<br>
         Passionate about AI, education, and research.<br><br>
         🇮🇳 India
     </div>
 </div>
 
-<footer>&copy; 2026 <b>SyntaxSlayer</b>. Developed by <b>Mohit Mandal</b>.</footer>
+<footer>&copy; 2026 <b>LEO FORGE</b>. Developed by <b>Mohit Mandal</b>.</footer>
 
 <script>
 // API Key Configuration
@@ -451,7 +451,7 @@ async function run() {
 
     const activeMode = mode;
     appendBox('user', text);
-    const loadingBox = appendBox('ai', "Consulting SyntaxSlayer Nodes...");
+    const loadingBox = appendBox('ai', "Typing...");
     input.value = "";
 
     if (!chatHistory[currentChatId])
@@ -475,7 +475,7 @@ async function run() {
             body: JSON.stringify({
                 model: MODEL,
                 messages: [
-                    { role: "system", content: "You are LearnMe AI, developed by Mohit Mandal under SyntaxSlayer. You are a helpful research assistant. Replace mentions of Google or OpenAI with SyntaxSlayer." },
+                    { role: "system", content: "You are LearnMe AI, developed by Mohit Mandal under LEO FORGE. You are a helpful research assistant. Replace mentions of Google or OpenAI with LEO FORGE." },
                     ...apiMessages
                 ],
                 temperature: activeMode === 'deep' ? 0.7 : 0.3
@@ -486,7 +486,7 @@ async function run() {
         let aiText = data.choices[0].message.content;
 
         let formatted = aiText
-            .replace(/Google|OpenAI/gi, "SyntaxSlayer")
+            .replace(/Google|OpenAI/gi, "LEO FORGE")
             .replace(/\n/g, '<br>');
 
         const wantsVisual = /(show|generate|create|display)/i.test(text) && /(image|picture|photo|pic)/i.test(text);
@@ -501,7 +501,7 @@ async function run() {
         localStorage.setItem('learnme_vFinal', JSON.stringify(chatHistory));
 
     } catch (err) {
-        loadingBox.innerText = "Error connecting to SyntaxSlayer Groq Node.";
+        loadingBox.innerText = "Oops Error..........";
     }
     clearStagedFile();
 }
